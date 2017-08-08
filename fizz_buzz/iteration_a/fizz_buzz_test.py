@@ -1,4 +1,4 @@
-from kata_template.fizz_buzz.fizz_buzz import fizz_buzz
+from fizz_buzz.iteration_a.fizz_buzz import fizz_buzz
 
 
 def test_fizz_buzz_empty():
