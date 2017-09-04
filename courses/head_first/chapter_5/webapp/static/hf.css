@@ -1,0 +1,150 @@
+body {
+    background: #ffffff;
+    margin: 0;
+    font: 12px/1.231 arial, helvetica, clean, sans-serif;
+}
+
+#container {
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+#page {
+    width: 974px;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+#footer .emailSignUpTable {
+    width: 950px;
+}
+
+#footer #multiColumnFooter #footer-branding {
+    width: 240px;
+}
+
+blockquote {
+    font-size: 11px;
+    line-height: 16px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #4e1896;
+}
+
+a:hover {
+    color: #4e1896;
+}
+
+h1, h2, h3 {
+    color: #3f2785;
+    padding-top: 7px;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h4 {
+    font-size: 1.0em;
+}
+
+.hf-header {
+    overflow: hidden;
+    margin-bottom: 8px;
+    background-color: #3f2785;
+}
+
+.hf-header .hf-logo {
+    display: block;
+    padding: 18px 10px;
+}
+
+.hf-header .hf-nav {
+    list-style: none;
+    padding: 0 15px 0 0;
+    margin: 0;
+    height: 41px;
+    background: #5c4797;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5c4797', endColorstr='#4b3887');
+    background: -webkit-gradient(linear, left top, left bottom, from(#5c4797), to(#4b3887));
+    background: -moz-linear-gradient(top, #5c4797, #4b3887);
+}
+
+.hf-header .hf-nav li.nav-item {
+    overflow: visible;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border-right: 2px solid #3f2785;
+}
+
+.hf-header .hf-nav li.nav-item a {
+    display: block;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 41px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hf-header .hf-nav li.nav-item a:hover {
+    text-decoration: none;
+    background: #7462a6;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7462a6', endColorstr='#5d4c93');
+    background: -webkit-gradient(linear, left top, left bottom, from(#7462a6), to(#5d4c93));
+    background: -moz-linear-gradient(top, #7462a6, #5d4c93);
+}
+
+.hf-header .hf-nav li.nav-item.selected a {
+    padding-top: 2px;
+    margin-top: -2px;
+    text-decoration: none;
+    color: #3f2785;
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eceaf3', endColorstr='#ffffff');
+    background: -webkit-gradient(linear, left top, left bottom, from(#eceaf3), to(#ffffff));
+    background: -moz-linear-gradient(top, #eceaf3, #ffffff);
+}
+
+.hf-header .hf-nav li.right {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.hf-header .hf-nav li.right a {
+    display: block;
+    margin: 11px 0 0 10px;
+    text-decoration: none;
+}
+
+#examples .hf-header a {
+    background: #3F2785 url('http://cdn.oreilly.com/oreilly/ml/head-first-series-logo.png') no-repeat 18px;
+    text-indent: 100%;
+    overflow: hidden;
+    height: 100px;
+}
+
+#examples #content {
+    margin: 0 10px 10px;
+}
+
+#examples li {
+    margin-bottom: 8px;
+}
+
+#examples li li {
+    margin: 2px 0;
+}
