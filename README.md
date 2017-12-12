@@ -1,7 +1,14 @@
-# python_katas
+# python-katas
 Katas in Python 3.6
 
 As professionals, we do katas as a form of [Deliberate Practice](http://codingdojo.org/DeliberatePractice/).
+
+# katas
+
+* hello_world
+* fizz_buz
+* bowling
+
 
 
 ## Contributing

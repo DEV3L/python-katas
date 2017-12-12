@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='python_katas',
+    name='python-katas',
     packages=find_packages(),
     version='0.1',
     description='A Python GitHub repository for practicing katas.',
