@@ -1,4 +1,4 @@
-from bowling.iteration_a.bowling import Bowling
+from kata_solutions.bowling._1.bowling import Bowling
 
 game_with_score_zero = [(0, 0) * 10]
 
