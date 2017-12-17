@@ -1,4 +1,4 @@
-from kata.bowling._bowling import score
+from kata_solutions.bowling._2.bowling import score
 
 
 # zombies
