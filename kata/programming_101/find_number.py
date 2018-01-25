@@ -1,25 +1,6 @@
-number_str = '123456789'
+_str = "this is a str"
+_str_2 = 'this is a str'
 
-
-def find_number(search):
-    if search in number_str:
-        print('hello')
-    else:
-        print('goodbye')
-
-
-find_number('0')
-#
-#
-# if True:
-#     print('hello world')
-# if False:
-#     print('goodbye world')
-
-# integer => int => whole number
-# float => float => decimal
-# boolean => bool => True/False
-# string => str => 'word'
-#
-#
-# print(my_variable)
+_bool = True  # False
+_int = 1
+_float = 1.0
