@@ -1,4 +1,4 @@
-#Fizz Buzz
+# Fizz Buzz
 
 [Fizz Buzz: Coding Dojo](http://codingdojo.org/kata/FizzBuzz)
 
