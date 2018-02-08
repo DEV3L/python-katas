@@ -1,19 +1,26 @@
-# DATA TYPES
+# PRIMITIVE DATA TYPES
 # str - string
 # bool - boolean
 # int - integer
 # float
+
+# COMPLEX DATA TYPES
 # list
+# dict
 
 # CASTING
 # str + int = runtime exception
 
+# SCOPE
+# white space in Python defines scope
+#     block of code associated with a control structure
 
 # CONTROL STRUCTURES
 # --for loops--
 # for {variable_name} in <collection>:
 #     <action>
 #
+
 # --logical--
 # if <bool>:
 #   pass
@@ -21,6 +28,9 @@
 #   pass
 # else <bool>:
 #   pass
+#
+# --assignment--
+# =
 #
 # --comparisons--
 # == -> equals
@@ -31,13 +41,9 @@
 # <= -> les than equal
 
 
-text_value = 'some input'
-
 """
   PRACTICE: print each letter in a given string
 """
-
-print('\n'.join(text_value))
 
 
 """
@@ -46,25 +52,13 @@ print('\n'.join(text_value))
 """
 
 
-def print_characters(input_string: str):
-    print('\n'.join(input_string))
-
-
-print_characters(text_value)
-
-
 """
     PRACTICE: create a function that takes two inputs,
     then prints True/False whether or not the first input
     is contained within the second input
 """
 
-
-def search_string(search_value: str, input_string: str):
-    print(search_value in input_string)
-
-
-search_string('a', text_value)  # False
-search_string('s', text_value)  # True
-search_string('S', text_value)  # False
-search_string('e i', text_value)  # True
+text_value = 'some input'
+# search_string('a', text_value)  # False
+# search_string('so', text_value)  # True
+# search_string('S', text_value)  # False
