@@ -19,7 +19,6 @@
 # --for loops--
 # for {variable_name} in <collection>:
 #     <action>
-#
 
 # --logical--
 # if <bool>:
@@ -28,10 +27,10 @@
 #   pass
 # else <bool>:
 #   pass
-#
+
 # --assignment--
 # =
-#
+
 # --comparisons--
 # == -> equals
 # != -> not equals
