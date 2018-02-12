@@ -11,6 +11,7 @@
 import itertools
 
 from pytest import fixture
+from pytest import mark
 
 from kata.bowling.bowling import score_game
 
@@ -21,17 +22,17 @@ def _frames():
     return frames
 
 
-def test_zero_score(frames):
-    expected_score = 0
+@mark.parametrize('expected_score, scores', [
+    (0, []),
+    (1, [(1, 0)]),
+    (10, list(itertools.repeat((1, 0), 10))),
+    (30, list(itertools.repeat((1, 2), 10)))
+])
+def test_score(expected_score, scores, frames):
+    for index, score in enumerate(scores):
+        frames[index] = score
+
     score = score_game(frames)
-    assert expected_score == score
-
-
-def test_one_score(frames):
-    frames[0] = (1, 0)
-    expected_score = 1
-    score = score_game(frames)
-
     assert expected_score == score
 
 
