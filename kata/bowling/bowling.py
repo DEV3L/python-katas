@@ -4,9 +4,10 @@ def score_game(frames: list):
     for round_number, frame in enumerate(frames):
         is_spare = False
 
-        score += sum(frame)
+        round_score = sum(frame)
+        score += round_score
 
-        if score == 10:
+        if round_score == 10:
             is_spare = True
 
         if is_spare and round_number < 9:

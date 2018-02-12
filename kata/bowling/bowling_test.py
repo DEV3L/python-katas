@@ -1,13 +1,3 @@
-# ZOMBIES
-# Zero
-# One
-# Many
-# Boundaries
-# Interfaces
-# Exceptions
-# Simple
-
-# bowling kata
 import itertools
 
 from pytest import fixture
@@ -31,30 +21,39 @@ def _frames():
     (30, list(itertools.repeat((1, 2), 10)))
 ])
 def test_score(expected_score, scores, frames):
+    _substitute_frame_scores(frames, scores)
+
+    score = score_game(frames)
+    assert expected_score == score
+
+
+@mark.parametrize('expected_score, scores', [
+    (12, [(1, 9), (1, 0)]),
+    (30, [(1, 9), (10, 0)]),
+    (36, [(1, 9), (2, 8), (7, 0)]),
+])
+def test_spare(expected_score, scores, frames):
+    _substitute_frame_scores(frames, scores)
+
+    score = score_game(frames)
+    assert expected_score == score
+
+
+def _substitute_frame_scores(frames, scores):
     for index, score in enumerate(scores):
         frames[index] = score
 
-    score = score_game(frames)
-    assert expected_score == score
 
-
-def test_spare(frames):
-    # If in two tries he knocks them all down, this is called a “spare”
-    #  and his score for the frame is ten plus the number of pins knocked down on his next throw (in his next turn).
-    frames[0] = (1, 9)
-    frames[1] = (1, 0)
-    expected_score = 12
-
-    score = score_game(frames)
-
-    assert expected_score == score
+# ZOMBIES
+# Zero
+# One
+# Many
+# Boundaries
+# Interfaces
+# Exceptions
+# Simple
 
 """
-Bowling Kata
-Based upon Uncle Bob's Adeventure's in C# Bowling Game
-
-Problem Description
-
 Create a program, which, given a valid sequence of rolls for one line of American Ten-Pin Bowling,
 produces the total score for the game. Here are some things that the program will not do:
 
