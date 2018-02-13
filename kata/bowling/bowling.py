@@ -1,30 +1,43 @@
+ALL_PINS = 10
+
 def score_game(frames: list):
     score = 0
 
     for round_number, frame in enumerate(frames):
-        is_spare = False
-        is_strike = False
+        score += sum(frame)
 
-        round_score = sum(frame)
-        score += round_score
+        is_spare = _is_spare(frame)
+        is_strike = _is_strike(frame)
 
-        if round_score == 10:
-            is_spare = True
-            if frame[0] == 10:
-                is_strike = True
+        if not is_spare and not is_strike:
+            continue
 
-        next_roll = frames[round_number + 1][0] if round_number < 9 else 0
+        next_roll_frame = frames[round_number + 1] if round_number < 9 else None
+
+        if not next_roll_frame:
+            continue
+
+        score += next_roll_frame[0]
+
         if is_strike:
-            score += next_roll
-
-            if next_roll == 10:
+            if next_roll_frame[0] == ALL_PINS:
                 second_roll = frames[round_number + 2][0] if round_number < 8 else 0
             else:
                 second_roll = frames[round_number + 1][1] if round_number < 9 else 0
 
             score += second_roll
-        elif is_spare:
-            score += next_roll
-
 
     return score
+
+
+def _is_spare(frame: tuple):
+    round_score = sum(frame)
+
+    if frame[0] != ALL_PINS \
+            and round_score == ALL_PINS:
+        return True
+    return False
+
+
+def _is_strike(frame: tuple):
+    return frame[0] == ALL_PINS
