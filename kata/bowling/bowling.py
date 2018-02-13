@@ -1,4 +1,6 @@
 ALL_PINS = 10
+LAST_ROUND = 9
+
 
 def score_game(frames: list):
     score = 0
@@ -12,18 +14,17 @@ def score_game(frames: list):
         if not is_spare and not is_strike:
             continue
 
-        next_roll_frame = frames[round_number + 1] if round_number < 9 else None
-
-        if not next_roll_frame:
+        if round_number >= LAST_ROUND:
             continue
 
+        next_roll_frame = frames[round_number + 1]
         score += next_roll_frame[0]
 
         if is_strike:
             if next_roll_frame[0] == ALL_PINS:
-                second_roll = frames[round_number + 2][0] if round_number < 8 else 0
+                second_roll = frames[round_number + 2][0] if round_number < LAST_ROUND - 1 else 0
             else:
-                second_roll = frames[round_number + 1][1] if round_number < 9 else 0
+                second_roll = frames[round_number + 1][1]
 
             score += second_roll
 
