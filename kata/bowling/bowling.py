@@ -6,13 +6,19 @@ def score_game(frames: list):
     score = 0
 
     for round_number, frame in enumerate(frames):
-        score += sum(frame)
+        _frames = frame[:2]
 
-        is_spare = _is_spare(frame)
-        is_strike = _is_strike(frame)
+        score += sum(_frames)
+
+        is_spare = _is_spare(_frames)
+        is_strike = _is_strike(_frames)
 
         if not is_spare and not is_strike:
             continue
+
+        if round_number == LAST_ROUND:
+            if is_spare:
+                score += frame[2] * 2
 
         if round_number >= LAST_ROUND:
             continue

@@ -52,6 +52,24 @@ def test_strike(expected_score, scores, frames):
     assert expected_score == score
 
 
+def test_score_tenth_frame_spare_zero(frames):
+    frames[9] = (9, 1, 0)
+    expected_score = 10
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
+def test_score_tenth_frame_spare_one(frames):
+    frames[9] = (9, 1, 1)
+    expected_score = 12
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
 def _substitute_frame_scores(frames, scores):
     for index, score in enumerate(scores):
         frames[index] = score
