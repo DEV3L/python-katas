@@ -40,10 +40,6 @@ def test_spare(expected_score, scores, frames):
 
 
 def test_strike_one_zero(frames):
-    # If on his first try in the frame he knocks down all the pins, this is called a “strike”.
-    #  His turn is over, and his score for the frame is ten plus the simple total of the pins
-    #  knocked down in his next two rolls.
-
     frames[0] = (10, 0)
     frames[1] = (1, 0)
 
@@ -54,14 +50,21 @@ def test_strike_one_zero(frames):
 
 
 def test_strike_one_one(frames):
-    # If on his first try in the frame he knocks down all the pins, this is called a “strike”.
-    #  His turn is over, and his score for the frame is ten plus the simple total of the pins
-    #  knocked down in his next two rolls.
-
     frames[0] = (10, 0)
     frames[1] = (1, 1)
 
     expected_value = 14
+    score = score_game(frames)
+
+    assert expected_value == score
+
+
+def test_strike_strike_one(frames):
+    frames[0] = (10, 0)
+    frames[1] = (10, 0)
+    frames[2] = (1, 0)
+
+    expected_value = 33
     score = score_game(frames)
 
     assert expected_value == score
@@ -89,7 +92,6 @@ If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw
 
 The game score is the total of all frame scores.
 
-Rules Reference
 
 
 """

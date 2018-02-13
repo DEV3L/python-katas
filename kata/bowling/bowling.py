@@ -14,16 +14,16 @@ def score_game(frames: list):
                 is_strike = True
 
         next_roll = frames[round_number + 1][0] if round_number < 9 else 0
-
         if is_strike:
+            score += next_roll
+
             if next_roll == 10:
-                second_roll = frames[round_number + 1][0] if round_number < 8 else 0
+                second_roll = frames[round_number + 2][0] if round_number < 8 else 0
             else:
                 second_roll = frames[round_number + 1][1] if round_number < 9 else 0
 
             score += second_roll
-
-        if is_spare:
+        elif is_spare:
             score += next_roll
 
 
