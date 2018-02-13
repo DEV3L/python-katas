@@ -39,49 +39,23 @@ def test_spare(expected_score, scores, frames):
     assert expected_score == score
 
 
-def test_strike_one_zero(frames):
-    frames[0] = (10, 0)
-    frames[1] = (1, 0)
+@mark.parametrize('expected_score, scores', [
+    (12, [(10, 0), (1, 0)]),
+    (14, [(10, 0), (1, 1)]),
+    (33, [(10, 0), (10, 0), (1, 0)]),
+    (60, [(10, 0), (10, 0), (10, 0)]),
+])
+def test_strike(expected_score, scores, frames):
+    _substitute_frame_scores(frames, scores)
 
-    expected_value = 12
     score = score_game(frames)
+    assert expected_score == score
 
-    assert expected_value == score
-
-
-def test_strike_one_one(frames):
-    frames[0] = (10, 0)
-    frames[1] = (1, 1)
-
-    expected_value = 14
-    score = score_game(frames)
-
-    assert expected_value == score
-
-
-def test_strike_strike_one(frames):
-    frames[0] = (10, 0)
-    frames[1] = (10, 0)
-    frames[2] = (1, 0)
-
-    expected_value = 33
-    score = score_game(frames)
-
-    assert expected_value == score
 
 def _substitute_frame_scores(frames, scores):
     for index, score in enumerate(scores):
         frames[index] = score
 
-
-# ZOMBIES
-# Zero
-# One
-# Many
-# Boundaries
-# Interfaces
-# Exceptions
-# Simple
 
 """
 Create a program, which, given a valid sequence of rolls for one line of American Ten-Pin Bowling,
