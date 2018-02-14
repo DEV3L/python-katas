@@ -63,7 +63,44 @@ def test_score_tenth_frame_spare_zero(frames):
 
 def test_score_tenth_frame_spare_one(frames):
     frames[9] = (9, 1, 1)
-    expected_score = 12
+    expected_score = 11
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
+def test_score_tenth_frame_strike_zero_zero(frames):
+    frames[9] = (10, 0, 0)
+    expected_score = 10
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
+def test_score_tenth_frame_strike_one_zero(frames):
+    frames[9] = (10, 1, 0)
+    expected_score = 11
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
+def test_score_tenth_frame_strike_strike_one(frames):
+    frames[9] = (10, 10, 1)
+    expected_score = 21
+
+    score = score_game(frames)
+
+    assert expected_score == score
+
+
+def test_score_all_strikes():
+    frames = list(itertools.repeat((10, 0), 9))
+    frames.append((10, 10, 10))
+    expected_score = 300
 
     score = score_game(frames)
 
@@ -73,17 +110,3 @@ def test_score_tenth_frame_spare_one(frames):
 def _substitute_frame_scores(frames, scores):
     for index, score in enumerate(scores):
         frames[index] = score
-
-
-"""
-Create a program, which, given a valid sequence of rolls for one line of American Ten-Pin Bowling,
-produces the total score for the game. Here are some things that the program will not do:
-
-
-If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw one or two more bonus balls, respectively. These bonus throws are taken as part of the same turn. If the bonus throws knock down all the pins, the process does not repeat: the bonus throws are only used to calculate the score of the final frame.
-
-The game score is the total of all frame scores.
-
-
-
-"""
