@@ -40,16 +40,29 @@
 # <= -> les than equal
 
 
-"""
-  PRACTICE: print each letter in a given string
-"""
-
-
-"""
-  PRACTICE: create a function that takes an input,
-  then prints each character of the input
-"""
-
+# """
+#   PRACTICE: print each letter in a given string
+# """
+# grande = 'Batmon'
+# print(grande)
+# count = 0
+# for sausage in grande:
+#     count += 1
+#     # count = count + 1
+#     if count == 5:
+#         print (sausage)
+#
+#
+# """
+#   PRACTICE: create a function that takes an input,
+#   then prints each character of the input
+# """
+#
+# def print_characters(grandez):
+#     for sausage in grandez:
+#         print(sausage)
+#
+# print_characters(grande)
 
 """
     PRACTICE: create a function that takes two inputs,
@@ -58,6 +71,15 @@
 """
 
 text_value = 'some input'
-# search_string('a', text_value)  # False
-# search_string('so', text_value)  # True
-# search_string('S', text_value)  # False
+
+
+def search_string(search, text_value):
+    return search in text_value
+
+
+print(search_string('a', text_value))  # False
+print(search_string('so', text_value))  # True
+print(search_string('S', text_value))  # False
+
+counts = [1, 2, 3, 4, 5, 6]
+print(7 in counts)
