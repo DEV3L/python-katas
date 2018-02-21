@@ -5,7 +5,7 @@ LAST_ROUND = 10
 def score_game(frame_rolls: list):
     score = 0
 
-    frames = [Frame(round_number, rolls) for round_number, rolls in enumerate(frame_rolls, start=1)]
+    frames = transform_rolls_into_frames(frame_rolls)
 
     for round_number, frame in enumerate(frames, start=1):
         next_roll = get_frame(frames, round_number)
@@ -14,6 +14,10 @@ def score_game(frame_rolls: list):
         score += frame.score(next_roll, second_next_roll)
 
     return score
+
+
+def transform_rolls_into_frames(frame_rolls):
+    return [Frame(round_number, rolls) for round_number, rolls in enumerate(frame_rolls, start=1)]
 
 
 def get_frame(frames, round_number):
@@ -27,7 +31,6 @@ class Frame:
 
     def __init__(self, round_number: int, rolls: tuple):
         self.round_number = round_number
-        self._rolls = rolls
 
         self.first_roll = rolls[0]
         self.second_roll = rolls[1]
@@ -42,17 +45,30 @@ class Frame:
         return not self.is_strike and self._is_all_pins(self.first_roll + self.second_roll)
 
     def score(self, next_frame: 'Frame', second_next_frame: 'Frame'):
-        score = self.first_roll + self.second_roll + self.third_roll
+        score = self._score_rolls()
+        score += self._score_spare(next_frame)
+        score += self._score_strike(next_frame, second_next_frame)
+        return score
 
-        if (self.is_spare or self.is_strike) and next_frame:
+    def _score_rolls(self):
+        score = self.first_roll + self.second_roll + self.third_roll
+        return score
+
+    def _score_spare(self, next_frame):
+        score = 0
+        if self.is_spare and next_frame:
+            score += next_frame.first_roll
+        return score
+
+    def _score_strike(self, next_frame, second_next_frame):
+        score = 0
+        if self.is_strike and next_frame:
             score += next_frame.first_roll
 
-        if self.is_strike and next_frame:
             if next_frame.is_strike and self.round_number != self.SECOND_LAST_ROUND:
                 score += second_next_frame.first_roll
             else:
                 score += next_frame.second_roll
-
         return score
 
     @classmethod
