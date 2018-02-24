@@ -1,11 +1,9 @@
-import itertools
-
 from kata.game_of_life.game_of_life import game_of_life
 
 
 def test_game_of_life_zero_board():
     expected_next_generation = _build_board(2, (0, 0), ())
-    generation_input = _build_board(1, (1, 1), ())
+    generation_input = _build_board(1, (0, 0), ())
 
     next_generation = game_of_life(generation_input)
 
@@ -23,23 +21,32 @@ def test_game_of_life_one_empty_board():
 
 def test_game_of_life_one_live_board():
     expected_next_generation = _build_board(2, (1, 1), ())
-    generation_input = \
-        'Generation 1:\n' \
-        '1 1\n' \
-        '*'
+    generation_input = _build_board(1, (1, 1), ((0, 0),))
 
     next_generation = game_of_life(generation_input)
 
     assert expected_next_generation == next_generation
 
 
-def _build_board(generation_number: int, board_size: tuple, live_nodes: tuple):
-    return_generation = f'Generation {generation_number}:\n'
+def _build_board(generation: int, board_size: tuple, live_nodes: tuple):
+    return_generation = f'Generation {generation}:\n'
     return_generation += f'{board_size[0]} {board_size[1]}\n'
 
-    board_line = ''.join(list(itertools.repeat('.', board_size[0])))
-    board = '\n'.join(list(itertools.repeat(board_line, board_size[1])))
+    board = [['.' for x in range(board_size[0])] for y in range(board_size[0])]
 
-    return_generation += board
+    for node in live_nodes:
+        board[node[0]][node[1]] = '*'
+
+    board_str = ''
+
+    for row in board:
+        row_str = ''
+        for cell in row:
+            row_str += cell
+        board_str += row_str + '\n'
+
+    board_str = board_str.rstrip('\n')
+
+    return_generation += board_str
 
     return return_generation
