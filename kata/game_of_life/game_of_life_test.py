@@ -28,11 +28,19 @@ def test_game_of_life_one_live_board():
     assert expected_next_generation == next_generation
 
 
+def test_game_of_life_fewer_than_two_neighbors():
+    expected_next_generation = _build_board(2, (2, 2), ())
+    generation_input = _build_board(1, (2, 2), ((0, 0), (1, 1)))
+
+    next_generation = game_of_life(generation_input)
+
+    assert expected_next_generation == next_generation
+
 def _build_board(generation: int, board_size: tuple, live_nodes: tuple):
     return_generation = f'Generation {generation}:\n'
     return_generation += f'{board_size[0]} {board_size[1]}\n'
 
-    board = [['.' for x in range(board_size[0])] for y in range(board_size[0])]
+    board = [['.' for x in range(board_size[0])] for y in range(board_size[1])]
 
     for node in live_nodes:
         board[node[0]][node[1]] = '*'
