@@ -47,6 +47,26 @@ def test_game_of_life_dead_cell_three_neighbors_lives():
 
     assert expected_next_generation == next_generation
 
+
+def test_game_of_life_example_board():
+    expected_next_generation = '''Generation 2:
+4 8
+........
+...**...
+...**...
+........'''
+
+    generation_input = '''Generation 1:
+4 8
+........
+....*...
+...**...
+........'''
+
+    next_generation = game_of_life(generation_input)
+
+    assert expected_next_generation == next_generation
+
 def _build_board(generation: int, board_size: tuple, live_nodes: tuple):
     return_generation = f'Generation {generation}:\n'
     return_generation += f'{board_size[0]} {board_size[1]}\n'

@@ -17,7 +17,7 @@ def game_of_life(input_board):
                 live_cells.append((x, y))
 
     board_dimensions = board_size.split(' ')
-    board = [['.' for x in range(int(board_dimensions[0]))] for y in range(int(board_dimensions[1]))]
+    board = [['.' for x in range(int(board_dimensions[1]))] for y in range(int(board_dimensions[0]))]
 
     for x, board_row in enumerate(board):
         for y, board_cell in enumerate(board_row):
