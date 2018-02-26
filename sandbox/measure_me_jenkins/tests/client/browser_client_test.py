@@ -2,6 +2,7 @@ from unittest.mock import MagicMock
 
 from app.clients.browser_client import BrowserClient
 from pytest import fixture
+from selenium.webdriver.common.by import By
 
 
 @fixture(name='webdriver')
@@ -51,3 +52,10 @@ def test_click_button(browser_client):
     browser_client.webdriver.find_element_by_name.assert_called_with(expected_button_name)
     assert browser_client.webdriver.find_element_by_name.return_value.click.called
 
+def test_find_elements_by_css_selector(browser_client):
+    expected_css_selector = 'a.tip'
+
+    elements = browser_client.find_elements_by_css_selector(expected_css_selector)
+
+    browser_client.webdriver.find_elements.assert_called_with(By.CSS_SELECTOR, expected_css_selector)
+    assert browser_client.webdriver.find_elements.return_value == elements

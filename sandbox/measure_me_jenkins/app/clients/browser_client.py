@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 
 class BrowserClient:
@@ -18,3 +19,6 @@ class BrowserClient:
     def click_button(self, *, name=None):
         button_element = self.webdriver.find_element_by_name(name)
         button_element.click()
+
+    def find_elements_by_css_selector(self, css_selector: str):
+        return self.webdriver.find_elements(By.CSS_SELECTOR, css_selector)
