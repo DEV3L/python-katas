@@ -22,3 +22,6 @@ class BrowserClient:
 
     def find_elements_by_css_selector(self, css_selector: str):
         return self.webdriver.find_elements(By.CSS_SELECTOR, css_selector)
+
+    def find_element_by_class_name(self, class_name):
+        return self.webdriver.find_element_by_class_name(class_name)

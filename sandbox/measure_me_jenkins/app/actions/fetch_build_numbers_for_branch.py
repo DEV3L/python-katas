@@ -19,7 +19,6 @@ class FetchBuildNumbersForBranch(Action):
     def execute(self):
         self.browser_client.get(self.branch_url)
 
-
         build_number_elements = self.browser_client.find_elements_by_css_selector(
             build_numbers_css_selector)
 

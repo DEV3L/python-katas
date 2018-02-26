@@ -59,3 +59,11 @@ def test_find_elements_by_css_selector(browser_client):
 
     browser_client.webdriver.find_elements.assert_called_with(By.CSS_SELECTOR, expected_css_selector)
     assert browser_client.webdriver.find_elements.return_value == elements
+
+def test_find_element_by_class_name(browser_client):
+    expected_class_name = 'class_name'
+
+    element = browser_client.find_element_by_class_name(expected_class_name)
+
+    browser_client.webdriver.find_element_by_class_name.assert_called_with(expected_class_name)
+    assert browser_client.webdriver.find_element_by_class_name.return_value == element
