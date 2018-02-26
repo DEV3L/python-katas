@@ -6,3 +6,5 @@ github_login_url = 'https://github.com/login'
 
 github_username = os_environ('GITHUB_USERNAME', default='github_username')
 github_password = os_environ('GITHUB_PASSWORD', default='github_password')
+
+webpage_cache_path = './data/web_pages/'
