@@ -12,6 +12,8 @@ setup(
     keywords=['dev3l', 'python', 'kata',],
     install_requires=[
         'pytest',
+        'flask',
+
     ],
     classifiers=[
         'Environment :: Console',

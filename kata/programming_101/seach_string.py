@@ -70,5 +70,6 @@
 
 """
   PRACTICE: Create a diction that contains a list of 
-  employee titles stored by the name
+  employee titles stored by the name, then print each record 
+  such that each employee name and title is printed on a line
 """
