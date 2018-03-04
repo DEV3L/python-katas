@@ -14,6 +14,10 @@ from kata.parse_string_time.parse_string_time import parse_string_time
 
 
 @mark.parametrize('input_value, expected_value', [
+    # milliseconds
+    ('1 ms', .001),
+    ('2 ms', .002),
+    ('419 ms', .419),
     # seconds
     ('1 sec', 1),
     ('2 sec', 2),
@@ -21,6 +25,11 @@ from kata.parse_string_time.parse_string_time import parse_string_time
     # minutes
     ('1 min', 60),
     ('3 min', 180),
+    # hours
+    ('1 hr', 60),
+    ('3 hr', 180),
+    # joined
+    ('3 hr 5 sec', 185),
     # invalid
     ('x sec', 0),
     ('', 0),
