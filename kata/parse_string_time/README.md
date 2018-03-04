@@ -17,6 +17,7 @@ The format is such:
   - min : 60
   - hr  : 3600
 - different duration types are joined together with a space character
+- invalid input values equal zero
 
 Create a program, which, given a valid time format, calculate the
 time in seconds
@@ -31,3 +32,4 @@ time in seconds
 |'9 min 57 sec' | 597 |
 |'1 hr 33 min'  | 5580 |
 |'1 hr 1 min 1 sec 111 ms' | 3661.111 |
+|'' | 0 |
