@@ -80,3 +80,6 @@ Mine Field #2:
 33200
 1*100
 ```
+
+## Kata Reference
+[Minsesweeper](http://codingdojo.org/kata/Minesweeper/)

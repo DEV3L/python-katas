@@ -4,6 +4,9 @@ This seems trivial, but ask yourself:
 
 "How would I TDD Hello World?"
 
+### Difficulty
+*easy*
+
 
 ## Problem Description
 
