@@ -47,7 +47,9 @@ The same field including the hint numbers described above would look like this:
 As you may have already noticed, each square may have at most 8 adjacent squares.
 
 ## Test Cases
+
 **Input**
+
 Mine Field #1:
 ```
 4 4
@@ -66,6 +68,7 @@ Mine Field #2:
 ```
 
 **Expected**
+
 Mine Field #1:
 ```
 *100
