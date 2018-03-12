@@ -30,35 +30,19 @@ The same field including the hint numbers described above would look like this:
 
 ---
 
-Write a program that takes input as follows:
+## Write a program that...
 
-The first line of each field contains two integers n and m
-(0 < n,m <= 100) which stands for the number of lines and columns of
-the field respectively.
+### Has an input such that
+- The first line is two integers n and m, the number of lines and columns
+  - **constraint:** 0 < n < m <= 100
+- The next n lines contains exactly m characters and represent the field
+  - Each safe square is represented by an “.” character
+  - Each mine square is represented by an “*” character
 
-The next n lines contains exactly m characters and represent the field.
+### Output
+- n lines with the “.” characters replaced with the number of adjacent mines
 
-Each safe square is represented by an “.” character.
-
-Each mine square is represented by an “*” character.
-
-The first field line where n = m = 0 represents the end of input and
-should not be processed.
-
-Your program should produce output as follows:
-
-For each field, you must print the following message in a line alone:
-
-Field #x:
-
-Where x stands for the number of the field (starting from 1).
-
-The next n lines should contain the field with the “.” characters
-replaced by the number of adjacent mines to that square.
-
-There must be an empty line between field outputs.
-
-#### Clues
+### Clues
 
 As you may have already noticed, each square may have at most 8 adjacent squares.
 
@@ -79,7 +63,6 @@ Mine Field #2:
 **...
 .....
 .*...
-0 0
 ```
 
 **Expected**
