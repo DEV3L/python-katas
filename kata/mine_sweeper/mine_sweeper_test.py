@@ -25,16 +25,30 @@ def test_build_solution_field():
     assert expected_field == mine_sweeper.field
 
 
-@mark.parametrize('field_size, expected_columns', [
+@mark.parametrize('field_size, expected_lines', [
     ('1 1', 1),
     ('2 1', 2),
     ('3 1', 3),
     ('5 1', 5),
     ('10 1', 10),
 ])
-def test_columns(field_size, expected_columns):
-    field = '\n'.join(['*' for _ in range(expected_columns)])
+def test_lines(field_size, expected_lines):
+    field = '\n'.join(['*' for _ in range(expected_lines)])
 
     mine_sweeper = MineSweeper(f'{field_size}\n{field}')
 
-    assert expected_columns == mine_sweeper.columns
+    assert expected_lines == mine_sweeper.lines
+
+# @mark.parametrize('field_size, expected_columns', [
+#     ('1 1', 1),
+#     ('1 2', 2),
+#     ('1 3', 3),
+#     ('1 5', 5),
+#     ('1 10', 10),
+# ])
+# def test_columns(field_size, expected_columns):
+#     field = '\n'.join(['*' for _ in range(expected_columns)])
+#
+#     mine_sweeper = MineSweeper(f'{field_size}\n{field}')
+#
+#     assert expected_columns == mine_sweeper.columns

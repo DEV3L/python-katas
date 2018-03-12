@@ -3,7 +3,7 @@ class MineSweeper:
         self.mine_field = mine_field
 
     @property
-    def columns(self):
+    def lines(self):
         size = self.mine_field.split('\n')[0]
         return int(size.split(' ')[0])
 
