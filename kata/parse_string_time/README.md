@@ -3,6 +3,10 @@
 A time conversion problem...
 
 
+### Difficulty
+*low?*
+
+
 ## Problem Description
 
 Execution times for a program are outputted in a non-standard parseable

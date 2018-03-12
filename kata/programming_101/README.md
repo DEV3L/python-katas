@@ -2,6 +2,8 @@
 
 A series of small practices for beginners
 
+### Difficulty
+*there is now a level zero*
 
 ## Problem Description
 
