@@ -39,16 +39,17 @@ def test_lines(field_size, expected_lines):
 
     assert expected_lines == mine_sweeper.lines
 
-# @mark.parametrize('field_size, expected_columns', [
-#     ('1 1', 1),
-#     ('1 2', 2),
-#     ('1 3', 3),
-#     ('1 5', 5),
-#     ('1 10', 10),
-# ])
-# def test_columns(field_size, expected_columns):
-#     field = '\n'.join(['*' for _ in range(expected_columns)])
-#
-#     mine_sweeper = MineSweeper(f'{field_size}\n{field}')
-#
-#     assert expected_columns == mine_sweeper.columns
+
+@mark.parametrize('field_size, expected_columns', [
+    ('1 1', 1),
+    ('1 2', 2),
+    ('1 3', 3),
+    ('1 5', 5),
+    ('1 10', 10),
+])
+def test_columns(field_size, expected_columns):
+    field = ''.join(['*' for _ in range(expected_columns)])
+
+    mine_sweeper = MineSweeper(f'{field_size}\n{field}')
+
+    assert expected_columns == mine_sweeper.columns

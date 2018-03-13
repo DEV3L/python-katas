@@ -8,5 +8,10 @@ class MineSweeper:
         return int(size.split(' ')[0])
 
     @property
+    def columns(self):
+        size = self.mine_field.split('\n')[0]
+        return int(size.split(' ')[1])
+
+    @property
     def field(self):
         return self.mine_field
