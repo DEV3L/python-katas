@@ -30,7 +30,7 @@ print('Hello, world!')
   int - integer
   0
 
-  PRACTICE: Print a string to the console
+  PRACTICE: Print a int to the console
 """
 
 """
