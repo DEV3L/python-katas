@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 .idea/*
 sandbox/*
+.pytest_cache/
 
 __pycache__/
 *.py[cod]
