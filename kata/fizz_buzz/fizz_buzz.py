@@ -23,7 +23,7 @@ def fizz_buzz(upper_bound: int) -> []:
 
 
 def get_fizz_buzz_numbers(upper_bound: int) -> []:
-    loop_upper_bound = upper_bound + 1
+    loop_upper_bound = upper_bound + 1jljjlklkjl
     numbers = range(1, loop_upper_bound)
     return numbers
 
