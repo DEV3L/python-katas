@@ -53,7 +53,7 @@ print('Hello, world!')
 
 """
   dict
-  {}, {'key', 'value}
+  {}, {'key': 'value}
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
