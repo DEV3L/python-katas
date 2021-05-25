@@ -12,6 +12,7 @@ class GildedRose:
                     items[i].quality = items[i].quality + 1
                     if "Aged Brie" == items[i].name:
                         if items[i].sell_in < 6:
+                            # items[i].quality = items[i].quality + 2
                             items[i].quality = items[i].quality + 1
                     # Increases the Quality of the stinky cheese if it's 11 days to due date.
                     if "Aged Brie" == items[i].name:
@@ -28,6 +29,8 @@ class GildedRose:
                                 items[i].quality = items[i].quality + 1
             if "Sulfuras, Hand of Ragnaros" != items[i].name:
                 items[i].sell_in = items[i].sell_in - 1
+            # if "Sulfuras, Fist of Ragnaros" != items[i].name:
+            #     items[i].sell_in = items[i].sell_in - 1
             if items[i].sell_in < 0:
                 if "Aged Brie" != items[i].name:
                     if "Backstage passes to a TAFKAL80ETC concert" != items[i].name:
