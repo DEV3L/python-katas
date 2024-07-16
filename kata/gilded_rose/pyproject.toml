@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Gilded-Rose-Kata"
+dynamic = ["version"]
+description = "The Gilded Rose Kata is a classic code kata for practicing refactoring skills."
+license = { file = "LICENSE" }
+readme = "README.md"
+authors = [{ name = "Justin Beall", email = "jus.beall@gmail.com" }]
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.hatch.version]
+path = "setup.cfg"
+pattern = "version = (?P<version>\\S+)"
+
+[tool.hatch.build.targets.sdist]
+include = ["/src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.envs.default]
+type = "virtual"
+path = ".venv"
+dependencies = ["pytest", "pytest-cov"]
+
+[tool.hatch.envs.default.scripts]
+gilded_rose = "python main.py"
+test = "pytest --cache-clear --cov --cov-report lcov --cov-report term"
+
+[tool.hatch.envs.hatch-static-analysis]
+config-path = "ruff_defaults.toml"
+
+[tool.ruff]
+extend = "ruff_defaults.toml"
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[tool.pytest.ini_options]
+markers = "integration: an integration test that hits external uncontrolled systems"
