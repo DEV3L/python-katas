@@ -42,7 +42,7 @@ Just for clarification, an item can never have its Quality increase above 50.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/DEV3L/knowledge-bot
+git clone https://github.com/DEV3L/python-katas
 cd python-katas/kata/gilded_rose
 ```
 
