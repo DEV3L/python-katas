@@ -10,7 +10,7 @@ setup(
     url='https://github.com/DEV3L/python_katas',
     keywords=['dev3l', 'python', 'head first', 'hf', 'flask', ],
     install_requires=[
-        'flask==1.0',
+        'flask==2.3.2',
     ],
     classifiers=[
         'Environment :: Web',
